@@ -1,12 +1,14 @@
 package ioc.weka.core;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 
 import weka.classifiers.Classifier;
 import weka.classifiers.functions.LinearRegression;
 import weka.core.Instances;
 import weka.core.SerializationHelper;
+import weka.core.converters.JSONLoader;
 
 public class WekaTrainer {
 	
@@ -22,6 +24,19 @@ public class WekaTrainer {
 	public void build(String dataFilePath){
 		try{
 			data = new Instances(new BufferedReader(new FileReader(dataFilePath)));
+			data.setClassIndex(data.numAttributes()-1);
+			model = new LinearRegression();
+			model.buildClassifier(data);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void build4Json(String dataFilePath){
+		try{
+			JSONLoader jsonloader = new JSONLoader();
+			jsonloader.setSource(new File(dataFilePath));
+			data = jsonloader.getDataSet();
 			data.setClassIndex(data.numAttributes()-1);
 			model = new LinearRegression();
 			model.buildClassifier(data);

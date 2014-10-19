@@ -1,8 +1,12 @@
 package ioc.weka.core;
 
+import java.io.File;
+
 import weka.classifiers.Classifier;
 import weka.core.Instance;
+import weka.core.Instances;
 import weka.core.SerializationHelper;
+import weka.core.converters.JSONLoader;
 
 public class WekaScorer {
 	
@@ -20,6 +24,24 @@ public class WekaScorer {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+	
+	public double[] score4Json(String predictFileName){
+		try{
+			JSONLoader jsonloader = new JSONLoader();
+			jsonloader.setSource(new File(predictFileName));
+			Instances instances = jsonloader.getDataSet();
+			instances.setClassIndex(instances.numAttributes()-1);
+			double[] result = new double[instances.numInstances()];
+			for (int i=0; i<instances.numInstances();i++){
+				Instance instance = instances.get(i);
+				result[i] = model.classifyInstance(instance);
+			}
+			return result;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
 		}
 	}
 	
