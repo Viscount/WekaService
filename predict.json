@@ -1,0 +1,38 @@
+{
+	"header" : {
+		"relation" : "tax_fact-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.Remove-R3",
+		"attributes" : [
+			{
+				"name" : "Time",
+				"type" : "numeric",
+				"class" : false,
+				"weight" : 1.0
+			},
+			{
+				"name" : "Tax",
+				"type" : "numeric",
+				"class" : true,
+				"weight" : 1.0
+			}
+		]
+	},
+	"data" : [
+		{
+			"sparse" : false,
+			"weight" : 1.0,
+			"values" : [
+				"8",
+				"?"
+			]
+		},
+		{
+			"sparse" : false,
+			"weight" : 1.0,
+			"values" : [
+				"7",
+				"?"
+			]
+		}
+	]
+}
+
