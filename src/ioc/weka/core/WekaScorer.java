@@ -1,6 +1,7 @@
 package ioc.weka.core;
 
 import java.io.File;
+import java.io.FileWriter;
 
 import weka.classifiers.Classifier;
 import weka.core.Instance;
@@ -9,6 +10,8 @@ import weka.core.SerializationHelper;
 import weka.core.converters.JSONLoader;
 
 public class WekaScorer {
+	
+	private static String defaultJsonFileName = "Scoring_Set.json";
 	
 	private String modelName;
 	private Classifier model;
@@ -27,10 +30,13 @@ public class WekaScorer {
 		}
 	}
 	
-	public double[] score4Json(String predictFileName){
+	public double[] score4Json(String jsondata){
 		try{
+			FileWriter fw = new FileWriter(defaultJsonFileName);
+			fw.write(jsondata);
+			fw.close();
 			JSONLoader jsonloader = new JSONLoader();
-			jsonloader.setSource(new File(predictFileName));
+			jsonloader.setSource(new File(defaultJsonFileName));
 			Instances instances = jsonloader.getDataSet();
 			instances.setClassIndex(instances.numAttributes()-1);
 			double[] result = new double[instances.numInstances()];

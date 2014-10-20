@@ -1,6 +1,6 @@
 {
 	"header" : {
-		"relation" : "tax_fact-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.Remove-R3",
+		"relation" : "tax_fact",
 		"attributes" : [
 			{
 				"name" : "Time",

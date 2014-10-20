@@ -1,6 +1,6 @@
 {
 	"header" : {
-		"relation" : "tax_fact-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.Remove-R3-weka.filters.unsupervised.attribute.Remove-R3",
+		"relation" : "tax_fact",
 		"attributes" : [
 			{
 				"name" : "Time",
@@ -22,7 +22,7 @@
 			"weight" : 1.0,
 			"values" : [
 				"1",
-				"10"
+				"1025.69"
 			]
 		},
 		{
@@ -30,7 +30,7 @@
 			"weight" : 1.0,
 			"values" : [
 				"2",
-				"20"
+				"1113.06"
 			]
 		},
 		{
@@ -38,7 +38,7 @@
 			"weight" : 1.0,
 			"values" : [
 				"3",
-				"30"
+				"1206.71"
 			]
 		},
 		{
@@ -46,7 +46,7 @@
 			"weight" : 1.0,
 			"values" : [
 				"4",
-				"40"
+				"1275.00"
 			]
 		},
 		{
@@ -54,7 +54,7 @@
 			"weight" : 1.0,
 			"values" : [
 				"5",
-				"50"
+				"1362.63"
 			]
 		},
 		{
@@ -62,7 +62,7 @@
 			"weight" : 1.0,
 			"values" : [
 				"6",
-				"60"
+				"1448.38"
 			]
 		}
 	]
